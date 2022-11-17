@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "vars.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    var(--background-color1),
+    var(--background-color2)
+  );
+}
+
+.container {
+  color: var(--font-color);
+  background: var(--form-color);
+  width: 450px;
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--button-effect-color);
+  border-radius: 20px;
+}
+
+.form {
+  padding: 25px 30px;
+}
+
+.form header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #363636;
+}
+
+.form form {
+  margin: 20px 0;
+}
+
+.form form .text-error {
+  color: var(--text-error-color);
+  padding: 8px 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid var(--text-error-color);
+  border-radius: 10px;
+}
+
+.form form .form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.form form .name-details {
+  display: flex;
+}
+
+form .name-details .form-field:first-child {
+  margin-right: 10px;
+}
+
+form .name-details .form-field:last-child {
+  margin-left: 10px;
+}
+
+.form form .form-field input {
+  outline: none;
+}
+
+.form form .input input {
+  height: 30px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--font-color);
+  border-radius: 10px;
+}
+
+.form form .form-field label {
+  margin-bottom: 2px;
+}
+
+.form form .file input {
+  font-size: 16px;
+}
+
+.form form .button button {
+  margin-right: 12px;
+  height: 45px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--button-effect-color);
+  background: var(--form-color);
+  cursor: pointer;
+}
+
+.form form .button button:hover {
+  border: 1px solid var(--button-effect-color);
+  box-shadow: 2px 2px 2px var(--button-effect-color);
+  border-radius: 10px;
+}
+
+.form form .form-field i {
+  position: absolute;
+  right: 15px;
+  color: var(--icons-color);
+  top: 70%;
+  transform: translateY(-80%);
+  cursor: pointer;
+}
+
+.form .link-sigin {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.form .link-sigin a:hover {
+  text-decoration: underline;
+}

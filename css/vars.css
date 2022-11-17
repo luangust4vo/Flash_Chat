@@ -1,0 +1,11 @@
+:root {
+  --background-color1: #141e30;
+  --background-color2: #243b55;
+  --form-color: #0d151f;
+  --button-effect-color: #03e9f4;
+  --font-color: #fff;
+  --effect-color: rgba(0, 0, 0, 0);
+  --text-error-color: #fc0019;
+  --link-color: rgb(74, 74, 160);
+  --icons-color: #ccc;
+}
