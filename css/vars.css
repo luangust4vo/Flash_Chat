@@ -8,4 +8,6 @@
   --text-error-color: #fc0019;
   --link-color: rgb(74, 74, 160);
   --icons-color: #ccc;
+  --online-color: #0ceb29;
+  --offline-color: red;
 }

@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "vars.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    var(--background-color1),
+    var(--background-color2)
+  );
+}
+
+.container {
+  color: var(--font-color);
+  background: var(--form-color);
+  width: 450px;
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--button-effect-color);
+  border-radius: 20px;
+}
+
+.form {
+  padding: 25px 30px;
+}
+
+.form header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #363636;
+}
+
+.form form {
+  margin: 20px 0;
+}
+
+.form form .text-error {
+  color: var(--text-error-color);
+  padding: 8px 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid var(--text-error-color);
+  border-radius: 10px;
+}
+
+.form form .form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.form form .name-details {
+  display: flex;
+}
+
+form .name-details .form-field:first-child {
+  margin-right: 10px;
+}
+
+form .name-details .form-field:last-child {
+  margin-left: 10px;
+}
+
+.form form .form-field input {
+  outline: none;
+}
+
+.form form .input input {
+  height: 30px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--font-color);
+  border-radius: 10px;
+}
+
+.form form .form-field label {
+  margin-bottom: 2px;
+}
+
+.form form .file input {
+  font-size: 16px;
+}
+
+.form form .button button {
+  margin-right: 12px;
+  height: 45px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--button-effect-color);
+  background: var(--form-color);
+  cursor: pointer;
+}
+
+.form form .button button:hover {
+  border: 1px solid var(--button-effect-color);
+  box-shadow: 2px 2px 2px var(--button-effect-color);
+  border-radius: 10px;
+}
+
+.form form .form-field i {
+  position: absolute;
+  right: 15px;
+  color: var(--icons-color);
+  top: 70%;
+  transform: translateY(-80%);
+  cursor: pointer;
+}
+
+.form .link-sigin {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.form .link-sigin a:hover {
+  text-decoration: underline;
+}
+
+/* CSS da área dos usuários */
+.user {
+  padding: 25px 30px;
+}
+
+.user header,
+.users-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #363636;
+}
+
+.container img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+:is(.user, .users-list) .info {
+  display: flex;
+  align-items: center;
+}
+
+.user header .info img {
+  height: 50px;
+  width: 50px;
+}
+
+:is(.user, .users-list) .details {
+  margin-left: 15px;
+  color: var(--font-color);
+}
+
+:is(.user, .users-list, .chat) .details span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+:is(.user, .users-list, .chat) .details p {
+  font-size: 12px;
+}
+
+.user header .logout {
+  color: var(--font-color);
+  font-size: 16px;
+  padding: 7px 15px;
+  background: var(--background-color2);
+  border-radius: 5px;
+}
+
+.user .search {
+  margin: 20px 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user .search .text {
+  font-size: 18px;
+}
+
+.user .search input {
+  position: absolute;
+  height: 42px;
+  width: calc(100% - 50px);
+  border: 1px solid var(--icons-color);
+  padding: 0 13px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.user .search button {
+  height: 42px;
+  width: 47px;
+  border: none;
+  outline: none;
+  color: var(--font-color);
+  background: var(--background-color2);
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.users-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+:is(.users-list, .chat-field)::-webkit-scrollbar {
+  width: 0;
+}
+
+.users-list a {
+  margin-bottom: 15px;
+  page-break-after: 10px;
+  padding-right: 15px;
+}
+
+.users-list a:first-child {
+  margin-top: 30px;
+}
+
+.users-list a:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+
+.users-list a .info img {
+  height: 40px;
+  width: 40px;
+}
+
+.users-list a .status {
+  font-size: 12px;
+  color: var(--online-color);
+}
+
+.users-list a .status.offline {
+  color: var(--offline-color);
+}
+
+/* Estilo da área de chatting */
+.chat header {
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+}
+
+.chat header img {
+  height: 40px;
+  width: 40px;
+  margin: 0 15px;
+}
+
+.chat header .back-arrow {
+  font-size: 18px;
+  color: var(--icons-color);
+}
+
+.chat-field {
+  height: 400px;
+  background: var(--background-color2);
+  padding: 10px 30px 20px 30px;
+  overflow-y: auto;
+  box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%) inset 0 -32px 32px -32px rgb(0
+        0 0 / 5%);
+}
+
+.chat-field .chat {
+  margin: 15px 0;
+}
+
+.chat-field .chat p {
+  word-wrap: break-word;
+  padding: 8px 16px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 8%) 0 16px 16px -16px rgb(0 0 0 / 10%);
+}
+
+.chat-field .sent,
+.chat-field .received {
+  display: flex;
+  align-items: flex-end;
+}
+
+.sent .details {
+  max-width: calc(100% - 130px);
+  margin-left: auto;
+}
+
+.sent .details p {
+  background: var(--background-color1);
+  color: var(--font-color);
+  border-radius: 18px 18px 0 18px;
+}
+
+.received .details {
+  margin-right: auto;
+  max-width: calc(100% - 130px);
+}
+
+.received .details p {
+  background: white;
+  color: var(--background-color1);
+  border-radius: 18px 18px 18px 0;
+}
+
+.chat .typing-area {
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.typing-area input {
+  height: 45px;
+  width: calc(100% - 58px);
+  font-size: 16px;
+  border: 1px solid var(--font-color);
+  padding: 0 13px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.typing-area button {
+  width: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--icons-color);
+  background: var(--background-color2);
+}
