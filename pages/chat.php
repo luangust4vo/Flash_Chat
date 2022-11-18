@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flash Chat</title>
     <link rel="stylesheet" href="../css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/9e0806c8d8.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <div class="container">
@@ -54,5 +50,10 @@
         </form>
       </section>
     </div>
+
+    <script
+      src="https://kit.fontawesome.com/9e0806c8d8.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

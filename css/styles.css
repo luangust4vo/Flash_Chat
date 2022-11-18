@@ -52,6 +52,7 @@ body {
   margin-bottom: 10px;
   border: 1px solid var(--text-error-color);
   border-radius: 10px;
+  display: none;
 }
 
 .form form .form-field {
@@ -119,6 +120,11 @@ form .name-details .form-field:last-child {
   top: 70%;
   transform: translateY(-80%);
   cursor: pointer;
+}
+
+.form form .form-field i.active::before {
+  content: "\f070";
+  color: black;
 }
 
 .form .link-sigin {
@@ -203,6 +209,14 @@ form .name-details .form-field:last-child {
   font-size: 16px;
   border-radius: 5px;
   outline: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.user .search input.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .user .search button {
@@ -210,11 +224,21 @@ form .name-details .form-field:last-child {
   width: 47px;
   border: none;
   outline: none;
-  color: var(--font-color);
-  background: var(--background-color2);
+  color: var(--background-color2);
+  background: var(--font-color);
   border-radius: 5px;
   font-size: 18px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user .search button.active {
+  color: var(--font-color);
+  background: var(--background-color2);
+}
+
+.user .search button.active i::before {
+  content: "\f00d";
 }
 
 .users-list {

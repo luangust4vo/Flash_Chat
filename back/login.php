@@ -1,18 +1,22 @@
 <?php
+session_start();
 include_once("conexao.php");
 
-@$user = trim($_POST["email"]);
-@$pass = trim($_POST["pass"]);
+$email = mysqli_real_escape_string($con, $_POST['email']);
+$pass = mysqli_real_escape_string($con, $_POST['pass']);
 
-$sql = "SELECT * FROM dados WHERE email ='$user' AND password ='$pass'";
-$result = $con->query($sql);
+if(!empty($email) && !empty($pass)){
+    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$pass'";
 
-if ($result->num_rows == 1) {
-    setcookie("user", "$user");
-    setcookie("password", "$pass");
-    header("Location: ../pages/chat.php");
-    exit(0);
+    $result = $con -> query($sql);
+
+    if($result -> num_rows > 0){
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['unique_id'] = $row['unique_id'];
+        echo "success";
+    } else {
+        echo "Email ou senha incorretos";
+    }
 } else {
-    header("Location: error.php");
-    exit(0);
+    echo "Por favor, preencha todos os campos";
 }
