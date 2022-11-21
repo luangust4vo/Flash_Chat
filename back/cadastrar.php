@@ -2,18 +2,17 @@
 session_start();
 include_once("conexao.php");
 
-$firstname = mysqli_real_escape_string($con, $_POST['name']);
-$lastname = mysqli_real_escape_string($con, $_POST['lastname']);
-$email = mysqli_real_escape_string($con, $_POST['email']);
-$pass = mysqli_real_escape_string($con, $_POST['pass']);
+@$firstname = trim($_POST['name']);
+@$lastname = trim($_POST['lastname']);
+@$email = trim($_POST['email']);
+@$pass = trim($_POST['pass']);
 
 
 if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($pass)){
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $sql = "SELECT email FROM users WHERE email = '{$email}'";
-        $result = $con->query($sql);
+        $sql = mysqli_query($con, "SELECT email FROM users WHERE email = '{$email}'");
 
-        if($result -> num_rows > 0){
+        if($sql -> num_rows > 0){
             echo "$email - Esse email já está cadastrado";
         } else {
             if(isset($_FILES['image'])){
@@ -34,16 +33,14 @@ if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($pass)){
 
                         $random_id = rand(time(), 10000000);
 
-                        $sql = "INSERT INTO users VALUES 
-                                    (null, $random_id, '$firstname', '$lastname', '$email', '$pass', '$new_image_name', '$status')";
+                        $sql = mysqli_query($con, "INSERT INTO users VALUES 
+                                    (null, $random_id, '$firstname', '$lastname', '$email', '$pass', '$new_image_name', '$status')");
 
-                        $result = $con -> query($sql);
-                        if($result){
-                            $sql = "SELECT * FROM users WHERE email = '$email'";
+                        if($sql){
+                            $sql = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'");
                             
-                            $result = $con -> query($sql);
-                            if($result -> num_rows > 0){
-                                $row = mysqli_fetch_assoc($result);
+                            if($sql -> num_rows > 0){
+                                $row = mysqli_fetch_assoc($sql);
                                 $_SESSION['unique_id'] = $row['unique_id'];
                                 echo "success";
                             }

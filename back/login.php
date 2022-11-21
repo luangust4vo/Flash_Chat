@@ -2,16 +2,14 @@
 session_start();
 include_once("conexao.php");
 
-$email = mysqli_real_escape_string($con, $_POST['email']);
-$pass = mysqli_real_escape_string($con, $_POST['pass']);
+@$email = trim($_POST['email']);
+@$pass = trim($_POST['pass']);
 
 if(!empty($email) && !empty($pass)){
-    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$pass'";
+    $sql = mysqli_query($con, "SELECT * FROM users WHERE email = '$email' AND password = '$pass'");
 
-    $result = $con -> query($sql);
-
-    if($result -> num_rows > 0){
-        $row = mysqli_fetch_assoc($result);
+    if($sql -> num_rows > 0){
+        $row = mysqli_fetch_assoc($sql);
         $_SESSION['unique_id'] = $row['unique_id'];
         echo "success";
     } else {

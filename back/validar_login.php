@@ -4,10 +4,9 @@ include_once("conexao.php");
 $user = $_COOKIE["user"];
 $pass = $_COOKIE["password"];
 
-$sql = "SELECT * FROM dados WHERE email = '$user'  AND  password = '$pass'";
-$result = $con->query($sql);
+$sql = mysqli_query($con, "SELECT * FROM dados WHERE email = '$user'  AND  password = '$pass'");
 
-if ($result->num_rows != 1) {
+if ($sql -> num_rows != 1) {
     header("Location: error.php");
     exit(0);
 }else if($usuario == "" || $senha == ""){
