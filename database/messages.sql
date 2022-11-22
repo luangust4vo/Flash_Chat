@@ -24,47 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `users`
+-- Estrutura da tabela `messages`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `unique_id` int(200) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `image` varchar(400) NOT NULL,
-  `status` varchar(255) NOT NULL
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL,
+  `sender_id` int(255) NOT NULL,
+  `receiver_id` int(255) NOT NULL,
+  `message` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `users`
---
-
-INSERT INTO `users` (`id`, `unique_id`, `name`, `lastname`, `email`, `password`, `image`, `status`) VALUES
-(1, 158404885, 'Luan', 'Gustavo', 'luan@gmail.com', '12345', '1669137498gato_chorando.jpg', 'Online'),
-(2, 21028900, 'Denji', 'ChainsawMan', 'chainsaw@demon.com', 'pochita', '1669137661chainsawman.jpg', 'Online');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `users`
+-- Índices para tabela `messages`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`msg_id`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `users`
+-- AUTO_INCREMENT de tabela `messages`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `messages`
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

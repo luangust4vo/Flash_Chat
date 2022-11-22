@@ -1,8 +1,8 @@
 <?php
 include_once("conexao.php");
-$searchUser = trim($_POST["searchUser"]);
+$searchUser = mysqli_real_escape_string($con, $_POST["searchUser"]);
 
-$sql = mysqli_query($con, "SELECT * FROM users WHERE name LIKE '%{$searchUser}%' OR lastname '%{$searchUser}%'");
+$sql = mysqli_query($con, "SELECT * FROM users WHERE name LIKE '%{$searchUser}%' OR lastname LIKE '%{$searchUser}%'");
 $output = "";
 
 if($sql -> num_rows > 0){
