@@ -9,5 +9,5 @@
   --link-color: rgb(74, 74, 160);
   --icons-color: #ccc;
   --online-color: #0ceb29;
-  --offline-color: red;
+  --offline-color: rgba(255, 0, 0, 0.3);
 }

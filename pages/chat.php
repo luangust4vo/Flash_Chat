@@ -23,7 +23,7 @@ include("header.php");
         }
         ?>
         <a href="../pages/users.php" class="back-arrow"><i class="fa-solid fa-arrow-left-long"></i></a>
-        <img src="../assets/<?php echo $row["image"]; ?>" alt="" />
+        <img src="../assets/users_images/<?php echo $row["image"]; ?>" alt="" />
         <div class="details">
           <span><?php echo $row["name"] . " " . $row["lastname"]; ?></span>
           <p><?php echo $row["status"]; ?></p>

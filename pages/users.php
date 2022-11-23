@@ -17,19 +17,19 @@ include("header.php");
       <header>
         <?php
         $sql = mysqli_query($con, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-
+        
         if ($sql -> num_rows > 0) {
           $row = mysqli_fetch_assoc($sql);
         }
         ?>
         <div class="info">
-          <img src="../assets/<?php echo $row['image']; ?>" alt="" />
+          <img src="../assets/users_images/<?php echo $row['image']; ?>" alt="" />
           <div class="details">
             <span><?php echo $row['name'] . " " . $row['lastname']; ?></span>
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>
-        <a href="../back/logout.php?user_id=<?php $row["unique_id"] ?>" class="logout">Sair</a>
+        <a href="../back/logout.php?logout_id=<?php echo $row["unique_id"]; ?>" class="logout">Sair</a>
       </header>
       <div class="search">
         <span class="text"> Escolha alguém para conversar </span>

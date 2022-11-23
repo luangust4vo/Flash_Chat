@@ -28,7 +28,7 @@ if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($pass)){
                     $time = time();
 
                     $new_image_name = $time.$img_name;
-                    if(move_uploaded_file($tmp_name, "../assets/".$new_image_name)){
+                    if(move_uploaded_file($tmp_name, "../assets/users_images/".$new_image_name)){
                         $status = "Online";
 
                         $random_id = rand(time(), 10000000);

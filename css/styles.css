@@ -275,10 +275,6 @@ form .name-details .form-field:last-child {
   color: var(--online-color);
 }
 
-.users-list a .status.offline {
-  color: var(--offline-color);
-}
-
 /* Estilo da área de chatting */
 .chat header {
   display: flex;
