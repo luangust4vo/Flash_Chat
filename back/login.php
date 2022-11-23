@@ -10,8 +10,13 @@ if(!empty($email) && !empty($pass)){
 
     if($sql -> num_rows > 0){
         $row = mysqli_fetch_assoc($sql);
-        $_SESSION['unique_id'] = $row['unique_id'];
-        echo "success";
+        $status = "Online";
+        $sql2 = mysqli_query($con, "UPDATE users SET status = '{$status}' WHERE unique_id = {$row["unique_id"]}");
+        
+        if($sql2){
+            $_SESSION['unique_id'] = $row['unique_id'];
+            echo "success";
+        }
     } else {
         echo "Email ou senha incorretos";
     }

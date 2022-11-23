@@ -1,6 +1,7 @@
 const form = document.querySelector(".typing-area"),
   sendBtn = form.querySelector("button"),
-  inputField = form.querySelector(".input-field");
+  inputField = form.querySelector(".input-field"),
+  chatField = document.querySelector(".chat-field");
 
 form.onsubmit = (e) => {
   e.preventDefault();
@@ -12,6 +13,7 @@ sendBtn.onclick = () => {
   xhr.onload = () => {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       inputField.value = "";
+      scroll();
     }
   };
 
@@ -19,14 +21,22 @@ sendBtn.onclick = () => {
   xhr.send(formData);
 };
 
+chatField.onmouseenter = () => {
+  chatField.classList.add("active");
+};
+chatField.onmouseleave = () => {
+  chatField.classList.remove("active");
+};
+
 setInterval(() => {
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "../back/get-messages.php", true);
+  xhr.open("POST", "../back/get-messages.php", true);
   xhr.onload = () => {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       let data = xhr.response;
-      if (!searchBar.classList.contains("active")) {
-        usersList.innerHTML = data;
+      chatField.innerHTML = data;
+      if (!chatField.classList.contains("active")) {
+        scroll();
       }
     }
   };
@@ -34,3 +44,7 @@ setInterval(() => {
   let formData = new FormData(form);
   xhr.send(formData);
 }, 500);
+
+function scroll() {
+  chatField.scrollTop = chatField.scrollHeight;
+}

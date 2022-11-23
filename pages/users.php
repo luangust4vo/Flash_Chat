@@ -29,7 +29,7 @@ include("header.php");
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>
-        <a href="login.php" class="logout">Sair</a>
+        <a href="../back/logout.php?user_id=<?php $row["unique_id"] ?>" class="logout">Sair</a>
       </header>
       <div class="search">
         <span class="text"> Escolha alguém para conversar </span>

@@ -29,18 +29,7 @@ include("header.php");
           <p><?php echo $row["status"]; ?></p>
         </div>
       </header>
-      <div class="chat-field">
-        <div class="chat sent">
-          <div class="details">
-            <p></p>
-          </div>
-        </div>
-        <div class="chat received">
-          <div class="details">
-            <p></p>
-          </div>
-        </div>
-      </div>
+      <div class="chat-field"></div>
       <form action="#" class="typing-area" autocomplete="off">
         <input type="hidden" name="sender_id" value="<?php echo $_SESSION['unique_id']; ?>">
         <input type="hidden" name="receiver_id" value="<?php echo $user_id; ?>">
