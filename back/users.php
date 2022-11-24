@@ -3,7 +3,7 @@ session_start();
 include_once("conexao.php");
 
 $sender_id = $_SESSION["unique_id"];
-$sql = mysqli_query($con, "SELECT * FROM users WHERE NOT unique_id = {$sender_id} LIMIT 10");
+$sql = mysqli_query($con, "SELECT * FROM users WHERE NOT unique_id = {$sender_id}");
 $output = "";
 
 if($sql -> num_rows == 0){

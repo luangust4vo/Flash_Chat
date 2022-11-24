@@ -13,7 +13,7 @@ if(!empty($new_pass) && !empty($email)){
         if($new_pass == $row["password"]){
             echo "A nova senha não pode ser igual a anterior";
         } else {
-        $sql = mysqli_query($con, "UPDATE users SET password = '{$new_pass}'");
+        $sql = mysqli_query($con, "UPDATE users SET password = '{$new_pass}' WHERE email = '{$email}'");
             echo "success";
         }
     } else {
