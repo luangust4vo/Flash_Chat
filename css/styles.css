@@ -107,6 +107,20 @@ form .name-details .form-field:last-child {
   cursor: pointer;
 }
 
+.form .forgot-pass {
+  display: flex;
+  transform: translate(72%, -40%);
+}
+
+.form .forgot-pass a {
+  font-size: 12px;
+  color: var(--button-effect-color);
+}
+
+.form .forgot-pass a:hover {
+  text-decoration: underline;
+}
+
 .form form .button button:hover {
   border: 1px solid var(--button-effect-color);
   box-shadow: 2px 2px 2px var(--button-effect-color);

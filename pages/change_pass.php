@@ -1,46 +1,35 @@
 <?php
-session_start();
-if(isset($_SESSION["unique_id"])){
-  header("Location: users.php");
-}
-?>
-<?php
 include("header.php");
 ?>
 <body>
   <div class="container">
-    <section class="form signin">
+    <section class="form change">
       <header>Flash Chat</header>
-      <form action="../back/login.php" method="post">
+      <form action="../back/change_pass.php" method="post">
         <div class="text-error"></div>
         <div class="form-field input">
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="Insira seu email" />
+          <input type="email" name="email" id="email" placeholder="Informe o email cadastrado" />
         </div>
         <div class="form-field input">
           <label for="pass">Senha</label>
-          <input type="password" name="pass" id="pass" placeholder="Insira sua senha" />
+          <input type="password" name="pass" id="pass" placeholder="Digite a nova senha" />
           <i class="fa-solid fa-eye"></i>
         </div>
-        <span class="forgot-pass"><a href="change_pass.php">Esqueceu a senha?</a></span>
         <div class="form-field button">
           <div></div>
           <div></div>
           <div></div>
           <div></div>
-          <button type="submit">Logar</button>
+          <button type="submit">Enviar</button>
         </div>
       </form>
-      <div class="link-sigin">
-        Não possui cadastro? Então
-        <a href="./cadastro.php">cadastre-se aqui!</a>
-      </div>
     </section>
   </div>
 
   <script src="https://kit.fontawesome.com/9e0806c8d8.js" crossorigin="anonymous"></script>
   <script src="../js/show_pass.js"></script>
-  <script src="../js/login.js"></script>
+  <script src="../js/change_pass.js"></script>
 </body>
 
 </html>
